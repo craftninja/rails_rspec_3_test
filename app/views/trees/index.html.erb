@@ -1,7 +1,7 @@
 <h2>List of Trees:</h2>
 <ul>
   <% @trees.each do |tree| %>
-    <li><%= tree.tree_name %></li>
+    <li><%= link_to tree.tree_name, tree_path(tree) %></li>
   <% end %>
 </ul>
 

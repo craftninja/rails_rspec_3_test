@@ -14,6 +14,21 @@ class TreesController < ApplicationController
     redirect_to '/trees'
   end
 
+  def show
+    @tree = Tree.find(params[:id])
+  end
+
+  def edit
+    @tree = Tree.find(params[:id])
+  end
+
+  def update
+    @tree = Tree.find(params[:id])
+    @tree.tree_name = params[:tree][:tree_name]
+    @tree.save
+    redirect_to '/trees'
+  end
+
   private
 
   def allowed_params
