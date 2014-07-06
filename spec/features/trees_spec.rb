@@ -24,4 +24,14 @@ feature 'User can manage list of trees' do
     expect(page).to have_content(correct_tree)
   end
 
+  scenario 'User can delete trees' do
+    visit '/trees'
+    click_on 'Add a Tree'
+    fill_in 'Tree name', :with => 'Elder'
+    click_on 'Add this Tree'
+    click_on 'Elder'
+    click_on 'Delete this tree'
+    expect(page).to_not have_content('Elder')
+  end
+
 end

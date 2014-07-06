@@ -1,2 +1,3 @@
 <h2><%= @tree.tree_name %></h2>
 <%= link_to 'Update tree', edit_tree_path(@tree) %>
+<%= link_to 'Delete this tree', tree_path(@tree), :method => :delete %>
